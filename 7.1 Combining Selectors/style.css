@@ -1,0 +1,79 @@
+/* Write your code here: 
+    Combining CSS selectors
+*/
+
+/*  
+Group selector
+gives h1 AND h2 the color blueviolet
+*/
+h1, h2{
+    color: blueviolet;
+}
+
+/*  
+.box is the parent, p is the child
+- so below it is saying, select the thing that has a class of box,
+and look at its children and find a pargraph element. then
+give that child firebrick color.
+*/
+.box > p {
+    color: firebrick;
+}
+
+
+/*
+Descendant = apply to a descendant of left side
+-You can't just use the li selector because, on a bigger
+webstie you woudl make every li blue
+-the li's here a descendant of the div. so use box class in case
+there is multiple divs.
+*/
+.box li{
+    color: blue;
+}
+
+
+/* chain selector
+selectorselector{
+    color: seagreen;
+    }
+
+Chaining = Apply where all selectors are true
+best for using when you want to be specific
+for example :
+<h1 id="title" class "big heading"> Hello World </h1>
+
+- so what below is saying is look for an h1 that has
+an id of title, a class of big, and a class of heading
+
+h1#title.big.heading{
+    color: seagreen;
+    }
+always choose element first (h1,h2, li, p, etc.) then other selectors
+*/
+
+li.done{
+    color:seagreen ;
+}
+
+
+
+/* can also combine these combiner selectors
+
+selector selectorselector{
+    font-size: 2rem;
+    }
+- selector is ancestor and selectorselector is chain       
+*/
+
+
+/* 
+trying to target "other items"
+ul is ancestor paragraph element and class of done
+
+
+*/
+
+ul p.done{    /*  ul > p.done also works */
+    font-size: 0.5rem;
+}
